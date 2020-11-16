@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.lang.Math;
 
@@ -9,6 +10,7 @@ public class Basics {
         int[] negs = {-1,-3,-5,-7,-9,-13};
         int[] mix = {-1,3,-5,7,-9,0,13,6,-44};
         int[] mix2 = {-1,3,-5,7,-9,0,13,6,-44};
+        int[] y = {1, 5, 10, -2};
         thebasics.oneto255();
         thebasics.oddsto255();
         thebasics.sumto255();
@@ -31,6 +33,9 @@ public class Basics {
         // 219, 221, 223, 225, 227, 229, 231, 233, 235, 237,
         // 239, 241, 243, 245, 247, 249, 251, 253, 255]
         thebasics.greaterthanY(mix, 2); // 4
+        thebasics.squarevals(y); // [1, 25, 100, 4]]
+        thebasics.maxminavg(y); // [10.0, -2.0, 3.5]
+
 
 
     }
@@ -124,6 +129,41 @@ public class Basics {
             }
         }
         System.out.println(count);
+    }
+
+    // Given any array x, say [1, 5, 10, -2], write a method that multiplies
+    // each value in the array by itself. When the method is done, the array
+    // x should have values that have been squared, say [1, 25, 100, 4].
+    public void squarevals(int[] y){
+        for(int i = 0; i < y.length; i++){
+            y[i] = y[i] * y[i];
+        }
+
+        System.out.println(Arrays.toString(y));
+        
+    }
+
+    // Given any array x, say [1, 5, 10, -2], write a method that returns an
+    // array with the maximum number in the array, the minimum value in the
+    // array, and the average of the values in the array. The returned array
+    // should be three elements long and contain: [MAXNUM, MINNUM, AVG]
+    public void maxminavg(int[] y){
+        double max = y[0];
+        double min = y[0];
+        double sum = 0;
+        for(int i = 0; i < y.length; i++){
+            if(y[i] > max){
+                max = y[i];
+            }
+            if(y[i] < min){
+                min = y[i];
+            }
+            sum+=y[i];
+        }
+        double avg = sum / y.length;
+        double[] result = {max, min, avg};
+        System.out.println(Arrays.toString(result));
+
     }
 
 
