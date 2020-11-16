@@ -35,6 +35,7 @@ public class Basics {
         thebasics.greaterthanY(mix, 2); // 4
         thebasics.squarevals(y); // [1, 25, 100, 4]]
         thebasics.maxminavg(y); // [10.0, -2.0, 3.5]
+        thebasics.removenegatives(y); // [1, 5, 10, 0]
 
 
 
@@ -141,6 +142,18 @@ public class Basics {
 
         System.out.println(Arrays.toString(y));
         
+    }
+
+    // Given any array x, say [1, 5, 10, -2], write a method that replaces any
+    // negative number with the value of 0. When the method is done, x should
+    // have no negative values, say [1, 5, 10, 0].
+    public void removenegatives(int[] x){
+        for(int i = 0; i < x.length; i++){
+            if(x[i] < 0){
+                x[i] = 0;
+            }
+        }
+        System.out.println(Arrays.toString(x));
     }
 
     // Given any array x, say [1, 5, 10, -2], write a method that returns an
