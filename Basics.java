@@ -36,6 +36,7 @@ public class Basics {
         thebasics.squarevals(y); // [1, 25, 100, 4]]
         thebasics.maxminavg(y); // [10.0, -2.0, 3.5]
         thebasics.removenegatives(y); // [1, 5, 10, 0]
+        thebasics.shiftvals(y); // [5, 10, -2, 0]
 
 
 
@@ -177,6 +178,19 @@ public class Basics {
         double[] result = {max, min, avg};
         System.out.println(Arrays.toString(result));
 
+    }
+
+    // Given any array x, say [1, 5, 10, 7, -2], write a method that shifts
+    // each number by one to the front. For example, when the method is done,
+    // an x of [1, 5, 10, 7, -2] should become [5, 10, 7, -2, 0]. Notice that
+    // the last number is 0. The method does not need to wrap around the values
+    // shifted out of bounds.
+    public void shiftvals(int[] x){
+        int[] result = new int[x.length];
+        for(int i = 0; i < x.length-1; i++){
+            result[i] = x[i+1];
+        }
+        System.out.println(Arrays.toString(result));
     }
 
 
